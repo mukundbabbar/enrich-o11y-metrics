@@ -1,6 +1,7 @@
 import csv
 import requests
 import json
+import sys
 
 #############################
 #############################
@@ -9,6 +10,7 @@ API_BASE = "https://api.au0.signalfx.com/v2/dimension/host.name/"
 #############################
 #############################
 
+apply = "--apply" in sys.argv
 
 headers = {
     "X-SF-TOKEN": API_TOKEN,
@@ -79,8 +81,8 @@ def main():
             updated_payload = update_payload(payload, row)
             print(json.dumps(updated_payload, indent=2))  # Logging
 
-            # COMMENT BELOW TO VALIDATE THE PAYLOAD BEFORE UPDATING DIMENSIONS
-            put_dimension(host, updated_payload)
+            if apply:
+                put_dimension(host, updated_payload)
 
 if __name__ == "__main__":
     main()
