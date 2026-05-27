@@ -122,7 +122,11 @@ APP-01,Dev,USA,TAG1|TAG2
 Place `hosts.csv` in the same directory and execute:
 
 ```bash
+# View/Validate the updated payload
 python update_dimensions.py
+
+# Once output seems ok
+python update_dimensions.py --apply
 ```
 
 ---
