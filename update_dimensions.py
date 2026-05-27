@@ -78,6 +78,8 @@ def main():
                 continue
             updated_payload = update_payload(payload, row)
             print(json.dumps(updated_payload, indent=2))  # Logging
+
+            # COMMENT BELOW TO VALIDATE THE PAYLOAD BEFORE UPDATING DIMENSIONS
             put_dimension(host, updated_payload)
 
 if __name__ == "__main__":
