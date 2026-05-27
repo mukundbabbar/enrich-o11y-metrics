@@ -1,0 +1,3 @@
+host,Env,Business Owner,Compliance Zone,Location,tags
+APP-01,Dev,IT,Non Regulated,USA,TAG1
+APP-02,Prod,Finance,Regulated,Australia,TAG1|TAG2|TAG3
